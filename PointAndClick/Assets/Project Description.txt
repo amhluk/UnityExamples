@@ -1,0 +1,39 @@
+Synopsis:
+The Unity Project 1 Lab provides the individual with an introduction to creating a simple 2D game inside the Unity editor. The lab encompasses a set of defining elements in the creation of the game by using basic game development strategies, design techniques and scripting, required to successfully complete the full scope of the project in Unity.
+
+Objectives:
+Develop a working knowledge and skill for using Unity to place assets, build gameplay and scripts for creating your first game.
+
+Time Estimate:
+6+ hours to complete
+
+Research:   2 hours
+Design:       1 hour
+Build:          2 hours
+Play Test:   1 hour +
+
+Details:
+Unity Project 1 Lab requires the following to be completed for the web build.
+Note: All details are provided in the Lab Videos
+
+Menu Screen
+Game/Level (Minimum 1 playable level)
+Victory Screen (With option to replay and quit)
+Loss Screen (With option to replay and quit)
+HUD for score and timer
+Project Files and working Executable
+Bug Free
+Presentation
+
+After completing the video tutorials, the following elements should be created on your own and posted online for presentation.
+
+Blinking Sphere
+        Counter - 3 second countdown for the Sphere before disappearing
+        While counting down, add a flashing element to the Sphere
+Moving Cube
+        Make a ‘New’ Cube game object and attach the Cube script to it
+        Add an additional script to the object called ‘MoveCube’
+        Provide the correct code to move the object randomly across the scene
+Random Spawn Time
+        Create a random time to spawn the Spheres
+Extra Credit: Make the Sphere move in a circular pattern
