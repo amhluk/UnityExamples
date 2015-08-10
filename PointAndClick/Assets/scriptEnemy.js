@@ -9,12 +9,16 @@ var enemyPoint		: int = 1;		//value of the enemy object
 
 //Private Variables
 private var storeClicks : int = 0;
+private var maxRange : int;
 
 //Start is only called once in the lifetime of the behaviour
 function Start ()
 {
 	storeClicks = numberOfClicks;
-	var startPosition = Vector3 ( Random.Range(-6,6), Random.Range(-4,4), 0 ); //new random position for the game object
+	
+	maxRange = Screen.width/80; //Screen.width/4 * 100/5 (Screen.width centered + scale with camera size)
+	
+	var startPosition = Vector3 ( Random.Range(- maxRange, maxRange), Random.Range(- maxRange, maxRange), 0 ); //new random position for the game object
 	transform.position = startPosition; //move the game object to the new location
 	RandomColor();
 }
@@ -29,11 +33,11 @@ function Update ()
 		{
 			Instantiate (explosion, transform.position, transform.rotation); //create an explosion
 		}
-		if (audio && audio.clip)
+		if (GetComponent.<AudioSource>() && GetComponent.<AudioSource>().clip)
 		{
-			audio.Play();
+			GetComponent.<AudioSource>().Play();
 		}
-		var position = Vector3 ( Random.Range(-6,6), Random.Range(-4,4), 0 ); //new random position for the game object
+		var position = Vector3 ( Random.Range(- maxRange, maxRange), Random.Range(- maxRange, maxRange), 0 ); //new random position for the game object
 		
 		RespawnWaitTime ();
 		transform.position = position; //move the game object to the new location
@@ -48,10 +52,10 @@ function Update ()
 //RespawnWaitTime is used to hide a game object for a set amount of time and then unhide it
 function RespawnWaitTime ()
 {	
-	renderer.enabled = false;
+	GetComponent.<Renderer>().enabled = false;
 	RandomColor ();
 	yield WaitForSeconds(respawnWaitTime);
-	renderer.enabled = true;
+	GetComponent.<Renderer>().enabled = true;
 }
 //RandomColor is used change out the material of a game object
 function RandomColor ()
@@ -59,6 +63,6 @@ function RandomColor ()
 	if (shapeColor.length > 0)
 	{
 		var newColor = Random.Range(0,shapeColor.length);
-		renderer.material.color = shapeColor[newColor];
+		GetComponent.<Renderer>().material.color = shapeColor[newColor];
 	}
 }
